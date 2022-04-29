@@ -1,0 +1,268 @@
+/*
+  - SPACING SYSTEM (px)
+  2 / 4 / 8 / 12
+  16 / 24 / 32 / 48 
+  64 / 80 / 96 / 128
+//////////////////////////
+  - FONT SIZE SYSTEM (px)
+  10 / 12 / 14 / 16 / 18
+  20 / 24 / 30 / 36 / 44
+  52 / 62 / 74 / 86 / 98
+//////////////////////////
+  - Font weights
+  Default: 400
+  Medium: 500
+  Semi-bold: 600
+  Bold: 700
+//////////////////////////
+  - Colors
+  main-color: #e67e22
+  tint-colors: #fdf2e9 , #fae5dc , #eb984e
+  shade-colors: #cf711f , #45260a
+//////////////////////////
+  - Line Heights
+  Default : 1
+  Headings: 1.02
+  Normal Paragraphs: 1.6
+*/
+
+:root {
+  font-size: 62.5%; /* 10px, if browser font-size is 16px */
+
+  scroll-behavior: smooth;
+  /* This Property does not work on Safari
+  So we should write some JavaScript to fix it */
+
+  overflow-x: hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+
+  /* vendor prefix ( -webkit- ) */
+  -webkit-font-smoothing: antialiased;
+
+  overflow-x: hidden;
+}
+
+.preload * {
+  /* Disable CSS transitions on page load only */
+  transition: none !important;
+}
+
+/***************************************************/
+/* Grid and Containers */
+/***************************************************/
+.container {
+  max-width: 120rem; /* 120rem * 10px = 1200px */
+  /* 🔴 That's kind of Standard so
+  many pages use this convetion 🔴 */
+
+  /* Centering */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+/***************************************************/
+/* Headings */
+/***************************************************/
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  letter-spacing: -0.05rem; /* -0.05rem * 10 = -0.5px */
+  color: #333;
+}
+
+.heading-primary {
+  font-size: 5.2rem; /* 5.2rem * 10px = 52px */
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 2.4rem;
+}
+
+.subheading {
+  display: block;
+  text-transform: uppercase;
+  color: #cf711f;
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.075rem;
+  margin-bottom: 1.6rem;
+  user-select: none;
+}
+
+/***************************************************/
+/* Buttons */
+/***************************************************/
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+  transition: all 300ms;
+
+  /* Only necessary for ".btn" */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.full-btn:link,
+.full-btn:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+@media (hover: hover) {
+  .full-btn:hover {
+    background-color: #cf711f;
+  }
+}
+
+.full-btn:active {
+  background-color: #cf711f;
+}
+
+.outline-btn:link,
+.outline-btn:visited {
+  background-color: #fff;
+  color: inherit;
+}
+
+@media (hover: hover) {
+  .outline-btn:hover {
+    background-color: #fdf2e9;
+
+    /* Trick to add border inside */
+    box-shadow: inset 0 0 0 3px #fff;
+  }
+}
+
+.outline-btn:active {
+  background-color: #fdf2e9;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/***************************************************/
+/* List */
+/***************************************************/
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1.6rem;
+  line-height: 1.2;
+}
+
+.list-icon {
+  color: #cf711f;
+  width: 3rem;
+  height: 3rem;
+}
+
+/***************************************************/
+/* Helper Classes */
+/***************************************************/
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.bold-text {
+  font-weight: 500;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #e67e22;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 300ms;
+}
+
+@media (hover: hover) {
+  .link:hover {
+    color: #cf711f;
+    border-bottom-color: transparent;
+  }
+}
+
+/***************************************************/
+/* Focus Statement */
+/***************************************************/
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem #e67d2280;
+}
+
+.cta-section *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem #fdf2e980;
+}

@@ -1,0 +1,96 @@
+/* Fixing flexbox gap for unsupported browsers */
+/***************************************************/
+/* 🔴 Header 🔴 */
+/***************************************************/
+.no-flex-gap .main-nav-list > li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+@media (max-width: 75em) {
+  .no-flex-gap .main-nav-list > li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 50em) {
+  .no-flex-gap .main-nav-list > li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
+  }
+}
+
+/***************************************************/
+/* 🔴 Hero Section 🔴 */
+/***************************************************/
+.no-flex-gap .hero-content > .hero-text-box {
+  margin-right: 9.6rem;
+}
+
+@media (max-width: 75em) {
+  .no-flex-gap .hero-content > .hero-text-box {
+    margin-right: 4.8rem;
+  }
+}
+
+@media (max-width: 62.5em) {
+  .no-flex-gap .hero-content > .hero-text-box {
+    margin-right: 0;
+    margin-bottom: 6.4rem;
+  }
+}
+
+.no-flex-gap .hero-btns > .btn:first-child {
+  margin-right: 1.6rem;
+}
+
+@media (max-width: 21.5625em) {
+  .no-flex-gap .hero-btns > .btn:first-child {
+    margin-right: 0;
+  }
+}
+
+/***************************************************/
+/* 🔴 Featured in Section 🔴 */
+/***************************************************/
+@media (max-width: 50em) {
+  .no-flex-gap .logos {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 3.2rem;
+  }
+  .no-flex-gap .logos > img:first-child {
+    margin-top: 1.6rem;
+  }
+}
+
+/***************************************************/
+/* 🔴 Meals (and the list of Diets) Section 🔴 */
+/***************************************************/
+.no-flex-gap .meal-tags > .meal-tag:not(:last-child) {
+  margin-right: 0.4rem;
+}
+
+.no-flex-gap .meal-attributes > .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flex-gap .meal-attribute > .meal-icon,
+.no-flex-gap .list-item > .list-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flex-gap .list > .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+/***************************************************/
+/* 🔴 Footer 🔴 */
+/***************************************************/
+.no-flex-gap .social-links > .social-link:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flex-gap .footer-nav > .footer-link:not(:last-child) {
+  margin-bottom: 2.4rem;
+}

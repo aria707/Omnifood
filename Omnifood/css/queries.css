@@ -1,0 +1,572 @@
+/* We should not use pixels in media queries! */
+/* 'rem' and 'em' do NOT depend on html font-size in media queries. */
+/* In Media queries, It is better to use "em" unit instead of "rem"
+Because "rem" has some bugs in some browsers */
+
+/* 
+  most phones are somewhere between 300px and 500px
+  most tablets are between 600px and 900px
+  most landscape tablets are between 900ppx and 1100px
+  and desktops are usually above 1200px
+*/
+
+/* 🔴 1em --> Browser's Font-size (Default :16px) 🔴 */
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 1344px */
+/* (1344px / 16px = 84em) */
+/***************************************************/
+@media (max-width: 84em) {
+  .hero-content,
+  .container {
+    max-width: 120rem;
+    padding: 0 4.8rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .testimonials-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 4.8rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 1200px */
+/* (1200px / 16px = 75em) */
+/***************************************************/
+@media (max-width: 75em) {
+  :root {
+    /* 9px / 16px = 0.5625
+    0.5625 * 100 = 56.25% */
+    font-size: 56.25%;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .hero-content {
+    gap: 4.8rem;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .meal-details {
+    padding: 2.4rem 3.2rem 3.2rem;
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴 */
+/* Bellow 1000px */
+/* (1000px / 16px = 62.5em) */
+/***************************************************/
+@media (max-width: 62.5em) {
+  :root {
+    /* 8px / 16px = 0.5
+    0.5 * 100 = 50% */
+    font-size: 50%;
+  }
+
+  .container {
+    padding: 0 8rem;
+  }
+
+  /* Hero */
+  .hero-content {
+    flex-direction: column;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-image-box {
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+    margin-bottom: 3.2rem;
+    flex-wrap: wrap;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+  }
+
+  .hero-img {
+    width: 60%;
+  }
+
+  /* Featured in */
+  .logos > img {
+    height: 2.4rem;
+  }
+
+  /* How It Works */
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meals-section .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Meals */
+  .meal-card {
+    width: 90%;
+  }
+
+  .meal-card:first-child {
+    justify-self: end;
+  }
+
+  .list-card {
+    grid-column: 1 / -1;
+    justify-self: center;
+    text-align: center;
+  }
+
+  .list-card > .list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.2rem;
+  }
+
+  /* Pricing */
+  .plan-card {
+    width: 90%;
+  }
+
+  /* Call To Action */
+  .cta-content {
+    grid-template-columns: 3fr 2fr;
+    /* 
+      3/5 --> 0.6 * 100 --> 60%
+      2/5 --> 0.4 * 100 --> 40%
+    */
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding-bottom: 4.8rem;
+  }
+
+  .form-btn {
+    margin-top: 1.2rem;
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 800px */
+/* (800px / 16px = 50em) */
+/* 📱 The Mobile navigation is activated at this breakpoint */
+/***************************************************/
+@media (max-width: 50em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container,
+  .hero-content,
+  .header {
+    padding: 0 4.8rem;
+  }
+
+  .header {
+    user-select: none;
+    -webkit-user-select: none;
+    /* the user cannot select the texts ( e.g. copy ) */
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .logos {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3.2rem;
+  }
+
+  /* How it works */
+  .step-number {
+    font-size: 6.2rem;
+  }
+
+  .how-works-section .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .how-works-section .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .how-works-section .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  .step-img {
+    width: 25%;
+  }
+
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .step-img-box::before {
+    width: 45%;
+    padding-bottom: 45%;
+  }
+
+  .step-img-box::after {
+    width: 33%;
+    padding-bottom: 33%;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }
+
+  /* Pricing */
+  .plan-card {
+    width: 100%;
+  }
+
+  /* Footer */
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+  }
+
+  .logo-col,
+  .contacts-col {
+    grid-column: span 3;
+  }
+
+  .footer > .grid {
+    row-gap: 9.6rem;
+  }
+
+  /* 🟣 Mobile nav menu */
+  .mobile-nav-btn {
+    display: inline-block;
+  }
+
+  .main-nav {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+
+    background-color: #ffffffd9;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Hiding Navigation */
+    opacity: 0; /* Hide it visually */
+    pointer-events: none; /* Unaccessible to Mouse and keyboard */
+    visibility: hidden; /* Hide it from screen readers */
+
+    /* Why we use this method?
+    Because if we set the display to none,
+    the animation will not work */
+
+    /* Animation */
+    transition: all 500ms ease-in;
+    transform: translateX(100%);
+  }
+
+  /* if '.main-nav' parent (header), has '.mobile-nav-open' class */
+  .mobile-nav-open > .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .mobile-nav-open .mobile-nav-icon[name='menu-outline'] {
+    display: none;
+  }
+
+  .mobile-nav-open .mobile-nav-icon[name='close-outline'] {
+    display: inline-block;
+  }
+
+  .mobile-nav-open + main > .featured-in-section .logos > img {
+    z-index: -1;
+  }
+
+  .sticky-nav.mobile-nav-open {
+    background-color: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  .main-nav-link.nav-cta:link {
+    background-color: #cf711f;
+    padding: 1.6rem 3.2rem;
+  }
+}
+
+/* 🔴🔴🔴 Mobiles 🔴🔴🔴 */
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 640px */
+/* (640px / 16px = 40em) */
+/***************************************************/
+@media (max-width: 40em) {
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-section {
+    padding: 2.4rem 0 6.4rem;
+  }
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .hero-img {
+    width: 70%;
+  }
+
+  .step-img {
+    width: 30%;
+  }
+
+  .step-img-box::before {
+    width: 55%;
+    padding-bottom: 55%;
+  }
+
+  .step-img-box::after {
+    width: 40%;
+    padding-bottom: 40%;
+  }
+
+  .meal-card,
+  .plan-card {
+    width: 65%;
+    justify-self: center;
+  }
+
+  .meal-card:first-child {
+    justify-self: center;
+  }
+
+  .plan--starter .sign-up-plan {
+    margin-top: 4.8rem;
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta-content {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+
+  .cta-img-box {
+    grid-row: 1;
+    height: 48rem;
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 520px */
+/* (520px / 16px = 32.5em) */
+/***************************************************/
+@media (max-width: 32.5em) {
+  .container,
+  .hero-content,
+  .header {
+    padding: 0 3.2rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .hero-img {
+    width: 75%;
+  }
+
+  .list-card > .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .meals-section .meal-card {
+    justify-self: center;
+  }
+
+  .meal-card,
+  .plan-card {
+    width: 75%;
+    justify-self: center;
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 460px */
+/* (460px / 16px = 28.75em) */
+/***************************************************/
+@media (max-width: 28.75em) {
+  .heading-primary {
+    font-size: 4rem;
+  }
+
+  .hero-img {
+    width: 90%;
+  }
+
+  .step-img {
+    width: 40%;
+  }
+
+  .step-img-box::before {
+    width: 75%;
+    padding-bottom: 75%;
+  }
+
+  .step-img-box::after {
+    width: 55%;
+    padding-bottom: 55%;
+  }
+
+  .meal-card,
+  .plan-card {
+    width: 85%;
+    justify-self: center;
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 384px */
+/* (384px / 16px = 24em) */
+/***************************************************/
+@media (max-width: 24em) {
+  .hero-img {
+    width: 100%;
+  }
+
+  .meal-card,
+  .plan-card {
+    width: 100%;
+    justify-self: center;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .list-card > .list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/***************************************************/
+/* 🔴 Breakpoint 🔴*/
+/* Bellow 304px */
+/* (304px / 16px = 19em) */
+/***************************************************/
+@media (max-width: 19em) {
+  :root {
+    /* 7px / 16px = 0.4375
+    0.4375 * 100 = 43.75% */
+    font-size: 43.75%;
+  }
+
+  .step-img {
+    width: 55%;
+  }
+
+  .step-img-box::before {
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  .step-img-box::after {
+    width: 75%;
+    padding-bottom: 75%;
+  }
+}
+
+/* Breakpoints :
+  🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+  1344px, 1200px, 1000px,
+  800px, 640px, 520px,
+  460px, 384px, 304px
+  🔴🔴🔴🔴🔴🔴🔴🔴🔴🔴
+*/
